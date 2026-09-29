@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F9F5EE">
+    <meta name="description" content="Choose the language for Pinoy Quiz.">
+    <title data-i18n="settingsPageTitle">Settings | Pinoy Quiz</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings.css">
+    <script src="i18n.js" defer></script>
+</head>
+<body>
+    <main class="settings-page">
+        <a class="settings-back" href="index.html" data-i18n="settingsBack">Back to Home</a>
+        <section class="settings-card" aria-labelledby="settings-heading">
+            <p class="settings-eyebrow" data-i18n="brandTagline">OUR PRIDE, OUR ROOTS</p>
+            <div class="settings-title-row">
+                <img class="settings-icon" src="settings.svg" alt="" aria-hidden="true">
+                <h1 id="settings-heading" data-i18n="settingsTitle">SETTINGS</h1>
+            </div>
+            <p class="settings-description" data-i18n="languageDescription">Choose the language used throughout the game.</p>
+            <label class="language-label" for="language-select" data-i18n="language">Language</label>
+            <select id="language-select" name="language">
+                <option value="PILIPINO">Pilipino</option>
+                <option value="ENGLISH">English</option>
+                <option value="ESPANOL">Español</option>
+                <option value="JAPANESE">日本語</option>
+            </select>
+
+            <div class="audio-setting">
+                <div class="audio-copy">
+                    <label for="audioToggle" data-i18n="audioLabel">Audio</label>
+                    <p data-i18n="audioDescription">Play background music across pages.</p>
+                </div>
+                <input id="audioToggle" type="checkbox" role="switch" data-i18n-aria-label="audioAria" aria-label="Background audio">
+            </div>
+
+            <div class="music-selection">
+                <label for="musicSelector" data-i18n="musicTrack">Background track</label>
+                <select id="musicSelector" name="music">
+                    <option value="assets/music/manila-groove.mp3">Manila Groove</option>
+                    <option value="assets/music/musicmaster.mp3">Music Master</option>
+                    <option value="assets/music/paoloargento.mp3">Paolo Argento</option>
+                    <option value="assets/music/vadim_makes_sound.mp3">Vadim Makes Sound</option>
+                    <option value="assets/music/buhay-pinoy.mp3">Buhay Pinoy</option>
+                </select>
+            </div>
+
+            <div class="volume-setting">
+                <div class="volume-heading">
+                    <label for="volumeSlider" data-i18n="volumeLabel">Volume</label>
+                    <output id="volume-value" for="volumeSlider">50%</output>
+                </div>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" data-i18n-aria-label="volumeLabel" aria-label="Music volume">
+            </div>
+        </section>
+    </main>
+    <audio id="background-audio" loop preload="auto" hidden></audio>
+    <script src="audio-controller.js"></script>
+</body>
+</html>

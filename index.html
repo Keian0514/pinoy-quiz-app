@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F9F5EE">
+    <meta name="description" content="Test your Pinoy knowledge and celebrate what makes home special.">
+    <title data-i18n="homeTitle">Pinoy Quiz | Tara, Laro!</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="i18n.js" defer></script>
+    <script src="audio-controller.js" defer></script>
+</head>
+<body class="home-screen">
+    <main class="app-container">
+        <header class="brand">
+            <img class="brand-logo" src="logo.svg" alt="Pinoy Quiz logo" width="60">
+            <div class="brand-copy">
+                <p class="brand-name">PINOY QUIZ</p>
+                <p data-i18n="brandTagline">GALING NATIN 'TO</p>
+            </div>
+        </header>
+
+        <section class="welcome" aria-labelledby="welcome-title">
+            <h1 id="welcome-title" data-i18n="homeHeading">TARA, LARO!</h1>
+            <p class="subtitle" data-i18n="homeSubtitle">Test your Pinoy knowledge and celebrate what makes home special.</p>
+        </section>
+
+        <nav class="menu-list" data-i18n-aria-label="mainMenu" aria-label="Main menu">
+            <a class="menu-button btn-primary" href="categories.html">
+                <img src="play.svg" alt="" aria-hidden="true">
+                <span data-i18n="play">PLAY</span>
+            </a>
+            <a class="menu-button btn-secondary" href="topscorer.html">
+                <img src="trophy.svg" alt="" aria-hidden="true">
+                <span data-i18n="topScorer">TOP SCORER</span>
+            </a>
+            <a class="menu-button btn-secondary" href="help.html">
+                <img src="help.svg" alt="" aria-hidden="true">
+                <span data-i18n="help">HELP</span>
+            </a>
+            <a class="menu-button btn-secondary" href="settings.html">
+                <img src="settings.svg" alt="" aria-hidden="true">
+                <span data-i18n="settings">SETTINGS</span>
+            </a>
+        </nav>
+
+        <footer class="footer"><span class="status-dot" aria-hidden="true"></span><span data-i18n="readyMessage">Ready when you are, kabayan.</span></footer>
+    </main>
+    <audio id="background-audio" loop preload="auto" hidden></audio>
+</body>
+</html>

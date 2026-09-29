@@ -1,0 +1,318 @@
+:root {
+	--history-tint: #FBE9E4;
+	--geography-tint: #E5F0F4;
+	--music-arts-tint: #FBE9E4;
+	--social-culture-tint: #E5F0EB;
+	--food-tint: #FFF2D5;
+	--logo-quiz-tint: #E8F0F3;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border-grey);
+  color: var(--navy);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.badge {
+	background-color: var(--muted-green);
+	color: var(--white);
+}
+
+.categories-page {
+	position: relative;
+	isolation: isolate;
+	width: min(100% - 40px, 480px);
+	min-height: 100vh;
+	min-height: 100svh;
+	margin: 0 auto;
+	padding: 20px 0 32px;
+}
+
+.page-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 40px;
+}
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 40px;
+	color: var(--navy);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.back-link svg {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+
+.back-link:focus-visible {
+	border-radius: 4px;
+	outline: 3px solid var(--text-grey);
+	outline-offset: 3px;
+}
+
+.rounds-badge {
+	padding: 8px 12px;
+	border: 1px solid var(--border-grey);
+	border-radius: 999px;
+	background: var(--muted-green);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--navy) 8%, transparent);
+	color: var(--white);
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+}
+
+.page-heading {
+	margin: 12px 0 22px;
+	text-align: left;
+}
+
+.page-heading h1 {
+	margin: 0;
+	color: var(--navy);
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1.15;
+}
+
+.page-heading p {
+	margin: 10px 0 0;
+	color: var(--text-grey);
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.category-grid {
+	position: relative;
+	isolation: isolate;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 200px;
+	gap: 20px;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.category-grid::before {
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	width: min(74vw, 340px);
+	aspect-ratio: 1;
+	border: 1px solid color-mix(in srgb, var(--gold-accent) 14%, transparent);
+	border-radius: 50%;
+	box-shadow:
+		0 0 0 20px color-mix(in srgb, var(--gold-accent) 3%, transparent),
+		0 0 0 40px color-mix(in srgb, var(--gold-accent) 2%, transparent);
+	content: "";
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+}
+
+.category-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	height: 200px;
+	gap: 0;
+	min-width: 0;
+	padding: 20px;
+	border: 1px solid var(--border-grey);
+	border-radius: 16px;
+	background: var(--white);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	color: var(--navy);
+	cursor: pointer;
+	font: inherit;
+	text-decoration: none;
+	transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.category-card:hover {
+	position: relative;
+	z-index: 1;
+	transform: scale(1.02);
+	box-shadow: 0 8px 20px color-mix(in srgb, var(--navy) 16%, transparent);
+}
+
+.category-card:active {
+	transform: scale(1);
+}
+
+.category-card:nth-child(1) {
+	border-top: 2px solid var(--soft-red);
+}
+
+.category-card:nth-child(2) {
+	border-top: 2px solid var(--navy);
+}
+
+.category-card:nth-child(3) {
+	border-top: 2px solid var(--soft-red);
+}
+
+.category-card:nth-child(4) {
+	border-top: 2px solid var(--gold-accent);
+}
+
+.category-card:nth-child(5) {
+	border-top: 2px solid var(--text-grey);
+}
+
+.category-card:nth-child(6) {
+	border-top: 2px solid var(--navy);
+}
+
+.category-card:nth-child(1) {
+	background: var(--history-tint);
+}
+
+.category-card:nth-child(2) {
+	background: var(--geography-tint);
+}
+
+.category-card:nth-child(3) {
+	background: var(--music-arts-tint);
+}
+
+.category-card:nth-child(4) {
+	background: var(--social-culture-tint);
+}
+
+.category-card:nth-child(5) {
+	background: var(--food-tint);
+}
+
+.category-card:nth-child(6) {
+	background: var(--logo-quiz-tint);
+}
+
+.category-card:focus-visible {
+	outline: 3px solid var(--text-grey);
+	outline-offset: 3px;
+}
+
+.category-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 5px;
+}
+
+.category-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	flex: 0 0 40px;
+	border-radius: 8px;
+	background: var(--gold-accent);
+	color: var(--navy);
+	font-size: 1rem;
+}
+
+.category-card:nth-child(1) .category-icon {
+	background: color-mix(in srgb, var(--soft-red) 16%, var(--white));
+	color: var(--soft-red);
+}
+
+.category-card:nth-child(2) .category-icon {
+	background: color-mix(in srgb, var(--navy) 12%, var(--white));
+	color: var(--navy);
+}
+
+.category-card:nth-child(3) .category-icon {
+	background: color-mix(in srgb, var(--muted-green) 16%, var(--white));
+	color: var(--muted-green);
+}
+
+.category-card:nth-child(4) .category-icon {
+	background: color-mix(in srgb, var(--gold-accent) 25%, var(--white));
+	color: var(--navy);
+}
+
+.category-card:nth-child(5) .category-icon {
+	background: color-mix(in srgb, var(--text-grey) 14%, var(--white));
+	color: var(--text-grey);
+}
+
+.category-card:nth-child(6) .category-icon {
+	background: color-mix(in srgb, var(--border-grey) 70%, var(--white));
+	color: var(--navy);
+}
+
+.category-copy {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 5px;
+	width: 100%;
+	min-width: 0;
+}
+
+.category-name {
+	font-size: 0.875rem;
+	font-weight: bold;
+	line-height: 1.3;
+	text-align: left;
+}
+
+.category-count {
+	color: var(--text-grey);
+	font-size: 12px;
+	line-height: 1.3;
+	text-align: left;
+}
+
+@media (max-width: 420px) {
+	.categories-page {
+		width: min(100% - 32px, 480px);
+		padding-top: 16px;
+	}
+
+	.page-heading {
+		margin: 10px 0 18px;
+	}
+
+	.category-name {
+		font-size: 0.875rem;
+	}
+}
+
+@media (max-width: 349px) {
+	.categories-page {
+		width: 100%;
+		padding: 12px 0 24px;
+	}
+
+	.category-grid {
+		grid-template-columns: minmax(0, 1fr);
+		grid-auto-rows: 180px;
+		gap: 14px;
+		padding: 16px;
+	}
+
+	.category-card {
+		height: 180px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.category-card {
+		transition-duration: 0.01ms;
+	}
+}

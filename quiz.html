@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#F9F5EE">
+	<meta name="description" content="Play the Pinoy Quiz and test your knowledge across three levels.">
+	<title data-i18n="quizPageTitle">Pinoy Quiz | Quiz</title>
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="quiz.css">
+	<script src="i18n.js" defer></script>
+	<script src="quiz-data.js" defer></script>
+	<script src="audio-controller.js" defer></script>
+	<script src="quiz.js" defer></script>
+</head>
+<body>
+	<main class="quiz-page">
+		<header class="quiz-header">
+			<a class="quiz-back" href="categories.html" data-i18n-aria-label="returnToCategories" aria-label="Back to categories">
+				<svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+					<path d="M19 12H5m0 0 7 7m-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<span data-i18n="back">Back</span>
+			</a>
+			<p class="level-label"><span id="selected-category">HISTORY</span> <span aria-hidden="true"> - </span><span data-i18n="level">LEVEL</span> <span id="level-number">1</span></p>
+			<p class="total-score"><span data-i18n="total">Total</span> <strong id="total-score">0</strong></p>
+		</header>
+
+		<div class="quiz-progress">
+			<span id="question-label" data-i18n="questionProgress">Question 1 of 10</span>
+			<span id="level-score" data-i18n="correctCount">0 correct</span>
+		</div>
+		<div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+
+		<section class="question-card question-enter" id="question-card" aria-labelledby="question-text">
+			<img class="question-image" id="question-image" data-i18n-alt="logoAlt" alt="Logo to identify" hidden>
+			<h1 id="question-text"></h1>
+			<div class="options-list" id="options-list" role="group" data-i18n-aria-label="answerOptions" aria-label="Answer options"></div>
+			<p class="answer-feedback" id="answer-feedback" aria-live="polite"></p>
+		</section>
+
+		<div class="quiz-actions">
+			<button class="next-button" id="next-button" type="button" data-i18n="nextQuestion" disabled>Next question</button>
+		</div>
+	</main>
+
+	<dialog class="level-modal" id="level-modal" aria-labelledby="modal-title" aria-describedby="modal-message">
+		<div class="modal-mark" aria-hidden="true">+</div>
+		<p class="modal-eyebrow" id="modal-eyebrow" data-i18n="levelComplete">LEVEL COMPLETE</p>
+		<h2 id="modal-title" data-i18n="levelUp">Level up!</h2>
+		<p class="modal-score" id="modal-score"></p>
+		<p class="modal-total" id="modal-total"></p>
+		<p class="modal-message" id="modal-message"></p>
+		<label class="score-name-field" id="score-name-field" hidden>
+			<span data-i18n="nameForLeaderboard">Name for the leaderboard</span>
+			<input id="score-name" type="text" maxlength="24" autocomplete="nickname" data-i18n-placeholder="enterName" placeholder="Enter your name">
+		</label>
+		<p class="score-save-status" id="score-save-status" role="status" aria-live="polite"></p>
+		<button class="modal-action" id="modal-action" type="button" data-i18n="continueToLevel">Continue</button>
+		<div class="game-over-actions" id="game-over-actions" hidden>
+			<button class="modal-icon-button restart-button" id="restart-button" type="button" data-i18n-aria-label="restart" data-i18n-title="restart" aria-label="Play again" title="Play again">
+				<svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+					<path d="M20 7v5h-5M4.9 9a7.5 7.5 0 0 1 12.7-2L20 12M4 17v-5h5m10.1 3a7.5 7.5 0 0 1-12.7 2L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<a class="modal-icon-button close-button" href="categories.html" data-i18n-aria-label="closeToCategories" data-i18n-title="returnToCategories" aria-label="Close and return to categories" title="Return to categories">
+				<svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+					<path d="m7 7 10 10M17 7 7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+				</svg>
+			</a>
+		</div>
+	</dialog>
+	<audio id="background-audio" loop preload="auto" hidden></audio>
+</body>
+</html>

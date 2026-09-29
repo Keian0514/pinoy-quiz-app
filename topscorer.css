@@ -1,0 +1,157 @@
+.leaderboard-page {
+    display: flex;
+    flex-direction: column;
+    width: min(100% - 40px, 620px);
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: 48px 0 32px;
+}
+
+.leaderboard-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.leaderboard-eyebrow {
+    margin: 0 0 8px;
+    color: var(--muted-green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.leaderboard-heading h1 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.leaderboard-subtitle {
+    margin: 10px 0 0;
+    color: var(--text-grey);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.leaderboard-panel {
+    overflow: hidden;
+    border: 1px solid var(--border-grey);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--navy) 8%, transparent);
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.scores-table th,
+.scores-table td {
+    padding: 16px 20px;
+}
+
+.scores-table th {
+    background: color-mix(in srgb, var(--light-cream) 82%, var(--white));
+    color: var(--text-grey);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.scores-table td {
+    border-top: 1px solid var(--border-grey);
+    color: var(--navy);
+    font-size: 0.95rem;
+}
+
+.scores-table td:first-child {
+    width: 72px;
+    color: var(--muted-green);
+    font-weight: 800;
+}
+
+.scores-table td:last-child {
+    width: 100px;
+    font-weight: 800;
+    text-align: right;
+}
+
+.empty-state {
+    margin: 0;
+    padding: 44px 24px;
+    color: var(--text-grey);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.leaderboard-actions {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.reset-button,
+.home-button {
+    align-self: center;
+    min-height: 54px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--navy) 10%, transparent);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-align: center;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.reset-button {
+    border: 1px solid var(--soft-red);
+    background: var(--white);
+    color: var(--soft-red);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.home-button {
+    border: 0;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.reset-button:hover,
+.home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px color-mix(in srgb, var(--navy) 16%, transparent);
+}
+
+.reset-button:focus-visible,
+.home-button:focus-visible {
+    outline: 3px solid var(--text-grey);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .leaderboard-page {
+        width: min(100% - 32px, 620px);
+        padding-top: 36px;
+    }
+
+    .leaderboard-heading {
+        margin-bottom: 24px;
+    }
+
+    .scores-table th,
+    .scores-table td {
+        padding: 14px 12px;
+    }
+}

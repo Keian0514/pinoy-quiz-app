@@ -1,0 +1,254 @@
+:root {
+    color-scheme: light;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --navy: #10384F;
+    --white: #FFFFFF;
+    --light-cream: #F9F5EE;
+    --border-grey: #E8E2D6;
+    --gold-accent: #F4B942;
+    --muted-green: #4C8B77;
+    --soft-red: #DD6B55;
+    --text-grey: #687887;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    min-width: 320px;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+    background: var(--light-cream);
+    color: var(--navy);
+}
+
+body.home-screen {
+    overflow: hidden;
+}
+
+body.home-screen::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, var(--gold-accent) 0.8px, transparent 1px),
+        radial-gradient(circle, var(--navy) 0.6px, transparent 1px);
+    background-position: 0 0, 14px 14px;
+    background-size: 28px 28px;
+    content: "";
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+button {
+    font: inherit;
+}
+
+.app-container {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(100% - 40px, 420px);
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: 44px 28px 32px;
+    border: 1px solid color-mix(in srgb, var(--white) 80%, transparent);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 12px 36px color-mix(in srgb, var(--navy) 7%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 42px;
+}
+
+.brand-logo {
+    display: block;
+    width: 60px;
+    height: auto;
+}
+
+.brand-copy {
+    text-align: center;
+}
+
+.brand-name,
+.brand p {
+    margin: 0;
+}
+
+.brand-name {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-shadow: 0 2px 8px color-mix(in srgb, var(--navy) 16%, transparent);
+}
+
+.brand p {
+    margin-top: 4px;
+    color: var(--text-grey);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.welcome h1 {
+    margin: 0;
+    font-size: clamp(2rem, 8vw, 2.65rem);
+    line-height: 1.1;
+    text-shadow: 0 3px 10px color-mix(in srgb, var(--navy) 14%, transparent);
+}
+
+.subtitle {
+    max-width: 340px;
+    margin: 14px auto 32px;
+    color: var(--text-grey);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.menu-list {
+    display: grid;
+    gap: 14px;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 62px;
+    padding: 16px 20px;
+    border: 1px solid var(--border-grey);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--navy) 8%, transparent);
+    color: var(--navy);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-button img {
+    display: block;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: invert(76%) sepia(56%) saturate(541%) hue-rotate(357deg) brightness(102%) contrast(94%);
+    transition: filter 0.3s ease;
+}
+
+.menu-button span {
+    line-height: 1.2;
+}
+
+.menu-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px color-mix(in srgb, var(--navy) 13%, transparent);
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.menu-button:active {
+    transform: translateY(0);
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.menu-button:hover img,
+.menu-button:active img {
+    filter: brightness(0) invert(1);
+}
+
+.menu-button:focus-visible {
+    outline: 3px solid var(--text-grey);
+    outline-offset: 3px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+    color: var(--text-grey);
+    font-size: 0.85rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--muted-green);
+}
+
+@media (max-width: 420px) {
+    .app-container {
+        width: 90%;
+        max-width: 400px;
+        padding-top: 32px;
+    }
+
+    .brand {
+        margin-bottom: 38px;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-container {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .menu-list {
+        gap: 11px;
+    }
+
+    .menu-button {
+        min-height: 56px;
+        gap: 10px;
+        padding: 13px 15px;
+        font-size: 0.84rem;
+    }
+
+    .menu-button img {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

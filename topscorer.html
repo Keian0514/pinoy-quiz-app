@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F9F5EE">
+    <meta name="description" content="See the top scores from Pinoy Quiz players.">
+    <title data-i18n="leaderboardPageTitle">Top Scorer | Pinoy Quiz</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topscorer.css">
+    <script src="i18n.js" defer></script>
+    <script src="audio-controller.js" defer></script>
+    <script src="topscorer.js" defer></script>
+</head>
+<body>
+    <main class="leaderboard-page">
+        <header class="leaderboard-heading">
+            <p class="leaderboard-eyebrow">PINOY QUIZ</p>
+            <h1 data-i18n="leaderboardTitle">TOP SCORER</h1>
+            <p class="leaderboard-subtitle" data-i18n="leaderboardSubtitle">The kabayans who know it best.</p>
+        </header>
+
+        <section class="leaderboard-panel" data-i18n-aria-label="leaderboardRegion" aria-label="Quiz leaderboard">
+            <table class="scores-table" id="scores-table">
+                <thead>
+                    <tr>
+                        <th scope="col" data-i18n="rank">Rank</th>
+                        <th scope="col" data-i18n="name">Name</th>
+                        <th scope="col" data-i18n="score">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="scores-list"></tbody>
+            </table>
+            <p class="empty-state" id="empty-state" data-i18n="emptyScores" role="status" hidden>No scores yet! Play a game to be the first.</p>
+        </section>
+
+        <div class="leaderboard-actions">
+            <button class="reset-button" id="reset-leaderboard" type="button" data-i18n="resetLeaderboard">Reset Leaderboard</button>
+            <a class="home-button" href="index.html" data-i18n="backHome">Back to Home</a>
+        </div>
+    </main>
+    <audio id="background-audio" loop preload="auto" hidden></audio>
+</body>
+</html>

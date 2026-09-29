@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#F9F5EE">
+	<meta name="description" content="Choose a Pinoy Quiz category and show what you know.">
+	<title data-i18n="categoriesPageTitle">Choose a Category | Pinoy Quiz</title>
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="categories.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<script src="i18n.js" defer></script>
+	<script src="audio-controller.js" defer></script>
+</head>
+<body>
+	<main class="categories-page">
+		<div class="page-toolbar">
+			<a class="back-link" href="index.html">
+				<svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+					<path d="M19 12H5m0 0 7 7m-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<span data-i18n="back">Back</span>
+			</a>
+			<span class="rounds-badge" data-i18n="rounds" data-i18n-count="6">6 ROUNDS</span>
+		</div>
+
+		<header class="page-heading">
+			<h1 data-i18n="categoriesHeading">PILI NG HAMON</h1>
+			<p data-i18n="categoriesSubtitle">Pick a category and show what you know</p>
+		</header>
+
+		<section class="category-grid" aria-label="Quiz categories">
+			<a class="category-card" href="quiz.html?category=HISTORY">
+				<div class="category-content">
+					<div class="category-icon" aria-hidden="true"><i class="fa-solid fa-landmark"></i></div>
+					<div class="category-copy">
+						<span class="category-name" data-i18n="history">HISTORY</span>
+						<span class="category-count" data-i18n="questionCount" data-i18n-count="30">30 questions</span>
+					</div>
+				</div>
+			</a>
+			<a class="category-card" href="quiz.html?category=GEOGRAPHY">
+				<div class="category-content">
+					<div class="category-icon" aria-hidden="true"><i class="fa-solid fa-earth-asia"></i></div>
+					<div class="category-copy">
+						<span class="category-name" data-i18n="geography">GEOGRAPHY</span>
+						<span class="category-count" data-i18n="questionCount" data-i18n-count="30">30 questions</span>
+					</div>
+				</div>
+			</a>
+			<a class="category-card" href="quiz.html?category=MUSIC%2FARTS">
+				<div class="category-content">
+					<div class="category-icon" aria-hidden="true"><i class="fa-solid fa-music"></i></div>
+					<div class="category-copy">
+						<span class="category-name" data-i18n="musicArts">MUSIC/ARTS</span>
+						<span class="category-count" data-i18n="questionCount" data-i18n-count="30">30 questions</span>
+					</div>
+				</div>
+			</a>
+			<a class="category-card" href="quiz.html?category=SOCIAL%20CULTURE">
+				<div class="category-content">
+					<div class="category-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
+					<div class="category-copy">
+						<span class="category-name" data-i18n="socialCulture">SOCIAL CULTURE</span>
+						<span class="category-count" data-i18n="questionCount" data-i18n-count="30">30 questions</span>
+					</div>
+				</div>
+			</a>
+			<a class="category-card" href="quiz.html?category=FOOD">
+				<div class="category-content">
+					<div class="category-icon" aria-hidden="true"><i class="fa-solid fa-utensils"></i></div>
+					<div class="category-copy">
+						<span class="category-name" data-i18n="food">FOOD</span>
+						<span class="category-count" data-i18n="questionCount" data-i18n-count="30">30 questions</span>
+					</div>
+				</div>
+			</a>
+			<a class="category-card" href="quiz.html?category=LOGO%20QUIZ">
+				<div class="category-content">
+					<div class="category-icon" aria-hidden="true"><i class="fa-solid fa-shapes"></i></div>
+					<div class="category-copy">
+						<span class="category-name" data-i18n="logoQuiz">LOGO QUIZ</span>
+						<span class="category-count" data-i18n="questionCount" data-i18n-count="30">30 questions</span>
+					</div>
+				</div>
+			</a>
+		</section>
+	</main>
+	<audio id="background-audio" loop preload="auto" hidden></audio>
+</body>
+</html>

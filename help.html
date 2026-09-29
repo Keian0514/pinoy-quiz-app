@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#F9F5EE">
+	<meta name="description" content="Learn how to play Pinoy Quiz.">
+	<title data-i18n="helpPageTitle">How to Play | Pinoy Quiz</title>
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="help.css">
+	<script src="i18n.js" defer></script>
+	<script src="audio-controller.js" defer></script>
+</head>
+<body>
+	<main class="help-page">
+		<section class="help-card" aria-labelledby="help-title">
+			<p class="help-eyebrow" data-i18n="guideEyebrow">PINOY QUIZ GUIDE</p>
+			<h1 id="help-title" data-i18n="howToPlay">PAANO LARUIN?</h1>
+			<ol class="instructions-list">
+				<li data-i18n="guideOne">Pumili ng kategorya (History, Geography, atbp.).</li>
+				<li data-i18n="guideTwo">Sagutin ang 30 questions (Easy, Medium, Hard).</li>
+				<li data-i18n="guideThree">I-identify ang mga logos sa Logo Quiz.</li>
+				<li data-i18n="guideFour">Tapusin ang lahat ng rounds para ma-save ang iyong score sa Leaderboard!</li>
+			</ol>
+		</section>
+
+		<a class="back-home" href="index.html" data-i18n="backHome">Back to Home</a>
+	</main>
+	<audio id="background-audio" loop preload="auto" hidden></audio>
+</body>
+</html>
